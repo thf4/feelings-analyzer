@@ -1,15 +1,15 @@
-const reviews = require('./review-2021.json');
+const reviews = require('./review-2020.json');
 const axios = require('axios');
 var fs = require('fs');
 
 const headers = {
   'Content-type': 'application/json',
-  Authorization: ""
+  Authorization: "Basic NDIzMy0xYVhLNVVRdzpleXdHRERJakx2dGs3Vjc3dkdJeWlGbkJjQ0hBMWJtcm9TeEdtNWdjSjFUSw=="
 }
 
 const allFellings = [];
 async function fellings() {
-  for (let index = 18402; index < reviews.length; index++) {
+  for (let index = 0; index < reviews.length; index++) {
     try {
       const element = reviews[index];
 
@@ -18,11 +18,11 @@ async function fellings() {
       allFellings.push(response.data.sentiment);
 
     } catch (error) {
-      fs.writeFileSync('./feelings-2021-8.json', JSON.stringify(allFellings))
+      fs.writeFileSync('./feelings-2020.json', JSON.stringify(allFellings))
       console.log(`COM ERROR -- ${index}`);
     }
     console.log(`SEM ERROR -- ${index}`);
-    fs.writeFileSync('./feelings-2021-8.json', JSON.stringify(allFellings))
+    fs.writeFileSync('./feelings-2020.json', JSON.stringify(allFellings))
   };
 };
 
