@@ -4,7 +4,7 @@ var fs = require('fs');
 
 const headers = {
   'Content-type': 'application/json',
-  Authorization: "Basic NDIzMy0xYVhLNVVRdzpleXdHRERJakx2dGs3Vjc3dkdJeWlGbkJjQ0hBMWJtcm9TeEdtNWdjSjFUSw=="
+  Authorization: ""
 }
 
 const allFellings = [];
